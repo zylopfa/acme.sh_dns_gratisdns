@@ -1,11 +1,11 @@
 #!/usr/bin/env sh
 
 # Author: Peter Bryde <bryde at bryde dot it>
-# Repository: https://github.com/zylopfa
+# Repository: https://github.com/zylopfa/acme.sh_dns_gratisdns
 #
 # Instructions:
 #
-#   gratisdns.dk is one of the biggest free dns providers in Denmark, 
+#   gratisdns.dk is one of the biggest free dns providers in Denmark,
 #   the have a control panel at: https://admin.gratisdns.com .
 #   To create a txt record this module logs in to gratisdns checks if the root domain exist
 #   and then create a txt record with the given content.
