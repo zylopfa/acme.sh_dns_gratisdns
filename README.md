@@ -1,7 +1,9 @@
 # acme.sh_dns_gratisdns
 
 **Author:** Peter Bryde <bryde at bryde dot it>
+
 **Repository:** https://github.com/zylopfa/acme.sh_dns_gratisdns
+
 
 ### Instructions
 
@@ -25,6 +27,7 @@ the delete function looks for the given txt content and delete the record with t
 
 #### Values to export
  `export GRATISDNS_Username="LDXXXXXXX"`
+
  `export GRATISDNS_Password="xxxxxxxxxx"`
 
 
