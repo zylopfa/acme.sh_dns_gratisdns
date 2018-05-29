@@ -1,23 +1,36 @@
-# acme.sh_dns_gratisdns
+# acme.sh dns api for danish DNS provider gratisdns.dk
+## acme.sh_dns_gratisdns
 
 **Author:** Peter Bryde <bryde at bryde dot it>
 
 **Repository:** https://github.com/zylopfa/acme.sh_dns_gratisdns
 
+### What is this?
+
+This is a dns api for use with [acme.sh](https://acme.sh)
+It enables you to automatically update gratisdns.dk dns-records for
+your domains hosted on their dns servers.
+
 
 ### Instructions
 
-gratisdns.dk is one of the biggest free dns providers in Denmark,
-the have a control panel at: https://admin.gratisdns.com .
-To create a txt record this module logs in to gratisdns checks if the root domain exist
-and then create a txt record with the given content.
-The same is the case when deleting a TXT record.
-the delete function looks for the given txt content and delete the record with that content.
+In order for this to work, download and install [acme.sh](https://acme.sh) and copy the
+**dns_gratisdns.sh** file into the sub directory **dnsapi**. 
 
-#### For regular cert for subdomain
+In the shell, you have to export the following
+
+ `export GRATISDNS_Username="LDXXXXXXX"`
+
+ `export GRATISDNS_Password="xxxxxxxxxx"`
+
+Remember to fill in your correct gratisdns username and password in the above.
+
+Then from the main directory issue one of  following commands
+
+#### To issue regular certificate for subdomain
  `./acme.sh --issue -d test.example.com --dns dns_gratisdns --dnssleep 660`
 
-#### For wildcard cert
+#### To issue wildcard certificate for domain
  `./acme.sh --issue -d '*.example.com' --dns  dns_gratisdns --dnssleep 660`
 
 ```
@@ -25,9 +38,5 @@ the delete function looks for the given txt content and delete the record with t
   if we use the default dnssleep the dns records will not be updated once they are checked.
 ```
 
-#### Values to export
- `export GRATISDNS_Username="LDXXXXXXX"`
-
- `export GRATISDNS_Password="xxxxxxxxxx"`
-
+To renew certificate use the **--renew** flag instead of the **--issue** one
 
