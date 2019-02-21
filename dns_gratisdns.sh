@@ -152,7 +152,7 @@ _gratisdns_login() {
   _H1="Cookie: $cookies"
   htmlpage="$(_get "$GRATISDNS_API")"
 
-  if ! _contains "$htmlpage" "$GRATISDNS_Username"; then
+  if ! _contains "$htmlpage" "Log ud"; then
     _err "Gratis DNS login failed for user $username"
     return 1
   fi
